@@ -116,7 +116,7 @@ function StudentNavbar({ toggleSidebar }) {
         {/* Searchbar */}
         <input
           type="text"
-          placeholder="Looking to learn something new?"
+          placeholder="Looking to learn something new...?"
           className="hidden md:block w-full sm:w-64 md:w-80 lg:w-96 px-4 py-2 text-xs font-inter text-[#000000] font-semibold border border-[#B8B8B8] rounded-2xl focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
       </div>
