@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChatWindow from "../../components/student-components/chatWindow";
+import ChatWindow from "../../components/student-components/ChatWindow";
 import { sendAnswer, startInterview } from "../../services/StudentService";
 
 function InterviewPage() {
@@ -68,6 +68,7 @@ function InterviewPage() {
         </div>
 
         <ChatWindow messages={messages} />
+        
 
         <div className="mt-4 flex items-center gap-2">
           <input

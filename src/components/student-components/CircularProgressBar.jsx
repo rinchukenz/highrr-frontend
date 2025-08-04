@@ -27,7 +27,7 @@ function CircularProgressBar({ percentage }) {
   }, [percentage]);
 
   return (
-    <div style={{ width: 120, height: 120 }}>
+    <div style={{ width: 130, height: 130 }}>
       <CircularProgressbarWithChildren
         value={progress}
         strokeWidth={20}
@@ -36,7 +36,7 @@ function CircularProgressBar({ percentage }) {
           trailColor: "#E5E7EB",     // light gray (for smoother animation effect)
         })}
       >
-        <div className="text-center text-black font-semibold text-sm">
+        <div className="text-center text-black font-semibold text-lg">
           {progress}%
         </div>
       </CircularProgressbarWithChildren>

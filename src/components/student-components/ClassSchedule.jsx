@@ -5,13 +5,9 @@ import React from "react";
 
 // Single class card
 const ClassCard = ({ title, type, time }) => (
-  <div className="flex items-center justify-between rounded-xl overflow-hidden border mb-4 shadow-sm">
-    <div
-      className={`w-3/5 p-4 text-white ${
-        type == "Live class"
-          ? "bg-[#CD68FF]"
-          : "bg-[#8E7AFF]"
-      }  rounded-l-xl`}
+  <div className="flex items-center justify-between rounded-sm text-xxs px-5 py-3 overflow-hidden border border-[#B8B8B8] mb-4 shadow-sm">
+    {/* <div
+      className=""
     >
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-xs mt-1">{type}</p>
@@ -21,7 +17,14 @@ const ClassCard = ({ title, type, time }) => (
         Click here
       </button>
       <p className="text-xs text-gray-500 text-right">{time}</p>
+    </div> */}
+
+    <div className="font-semibold text-xs">{time}</div>
+    <div>
+      <h3 className="font-semibold text-xs">Live Class: Data Structures</h3>
+      <p>Instructor: Prof. Shalini Verma - Zoom</p>
     </div>
+    <button className="bg-[#9D5CFF] py-1 px-3 text-white text-xxs cursor-pointer rounded-2xl">join now</button>
   </div>
 );
 
@@ -36,12 +39,12 @@ const ClassSchedule = ({ selectedDate, classData }) => {
   return (
     <div className="mt-6 px-4">
       <h2 className="text-sm font-semibold text-gray-700 mb-3">
-        Classes on {formattedDate}:
+        Classes and Events on {formattedDate}:
       </h2>
       {classes.length > 0 ? (
         classes.map((classItem, idx) => <ClassCard key={idx} {...classItem} />)
       ) : (
-        <p className="text-gray-400 text-sm">No classes scheduled.</p>
+        <p className="text-gray-400 text-3xl mt-15">No classes scheduled.</p>
       )}
     </div>
   );

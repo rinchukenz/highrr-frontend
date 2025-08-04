@@ -1,6 +1,5 @@
 import LoginPage from "./pages/LoginPage";
-//import OpeningScreen from "./pages/OpeningScreen";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SignUpPage from "./pages/SignUpPage";
 // import Dashboard from "./components/Dashboard/Dashboard";
 import Courses from "./components/orgadmin-components/Courses";

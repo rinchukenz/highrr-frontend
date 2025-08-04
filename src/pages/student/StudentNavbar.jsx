@@ -1,15 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar";
 import { Bell, User, Menu } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
 import axios from "axios";
-import LogOutButton from "./LogoutButton";
-import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
+import CustomInput from "../../components/common-components/CustomInput";
+import CustomButton from "../../components/common-components/CustomButton";
+import LogOutButton from "../../components/common-components/LogoutButton";
+import profilePic from "../../assets/studentprofile-pic.png";
+import dropdown from "../../assets/dropdown.png";
+import notification from "../../assets/notification.png";
 
-function Navbar({ toggleSidebar }) {
+function StudentNavbar({ toggleSidebar }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -104,26 +106,37 @@ function Navbar({ toggleSidebar }) {
   console.log(role);
 
   return (
-    <div className="h-16 sm:h-20 px-4 sm:px-6 md:px-8 lg:px-10 bg-white flex items-center justify-between relative">
-      {/* Page Title */}
-      <h1 className="text-xl sm:text-3xl font-semibold text-gray-800">
-        {getHeaderTitle()}
-      </h1>
+    <div className="h-16 sm:h-20 px-4 bg-white flex items-center justify-between relative">
+      <div className="flex items-center gap-10">
+        {/* Page Title */}
+        <h1 className="text-xl sm:text-2xl font-semibold text-black">
+          {getHeaderTitle()}
+        </h1>
 
-      {/* Sidebar for mobile and tablet */}
-      <Sidebar isOpen={sidebarOpen} />
+        {/* Searchbar */}
+        <input
+          type="text"
+          placeholder="Looking to learn something new?"
+          className="hidden md:block w-full sm:w-64 md:w-80 lg:w-96 px-4 py-2 text-xs font-inter text-[#000000] font-semibold border border-[#B8B8B8] rounded-2xl focus:outline-none focus:ring-2 focus:ring-violet-500"
+        />
+      </div>
 
       {/* Right side icons */}
-
-      <div className="flex items-center gap-4 relative">
+      <div className="flex items-center gap-4 relative lg:mr-4">
         {/* Profile Icon + Dropdown */}
-        <div className="relative" ref={dropdownRef}>
-          <User
-            className="w-6 h-6 text-gray-700 hidden md:block hover:text-violet-600 cursor-pointer transition"
+        <div className="relative flex gap-6 items-center" ref={dropdownRef}>
+          <div>
+            <img className="w-4 h-5" src={notification} alt="" />
+          </div>
+          <div
+            className=" flex items-center gap-4 px-4 py-1.5 rounded-sm border border-[#B8B8B8]"
             onClick={() => setDropdownOpen(!dropdownOpen)}
-          />
+          >
+            <img className="w-7 h-7" src={profilePic} alt="" />
+            <img className="w-3 h-2 cursor-pointer" src={dropdown} alt="" />
+          </div>
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border z-50 p-4 space-y-2">
+            <div className="absolute right-0 top-10 mt-2 w-60 bg-white rounded-xl shadow-lg border z-50 p-4 space-y-2">
               <div className="text-sm mb-2 font-semibold text-black">
                 {studentAuth.email || auth.user}
               </div>
@@ -227,4 +240,4 @@ function Navbar({ toggleSidebar }) {
   );
 }
 
-export default Navbar;
+export default StudentNavbar;

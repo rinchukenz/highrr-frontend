@@ -5,41 +5,51 @@ import ClassSchedule from "./ClassSchedule";
 
 // Sample class data
 const classData = {
-  "2025-06-19": 2,
-  "2025-06-20": 1,
-  "2025-06-21": 2,
+  "2025-08-04": 4,
+  "2025-08-05": 1,
+  "2025-08-06": 2,
 };
 
 const classDetails = {
-  "2025-06-19": [
+  "2025-08-04": [
     {
       title: "SpringBoot",
       type: "Live class",
-      time: "9:00 am - 1:00 pm",
+      time: "11:00 am",
     },
     {
       title: "Core Java Lec : 1",
       type: "Recorded class",
-      time: "Duration: 2 hours",
+      time: "1:00 pm",
+    },
+    {
+      title: "SpringBoot",
+      type: "Live class",
+      time: "3:00 pm",
+    },
+    {
+      title: "Core Java Lec : 1",
+      type: "Recorded class",
+      time: "5:30 pm",
     },
   ],
-  "2025-06-20": [
+  "2025-08-05": [
     {
       title: "React js",
       type: "Live class",
-      time: "9:00 am - 1:00 pm",
+      time: "5:00 pm",
     },
   ],
-  "2025-06-21": [
+  "2025-08-06": [
     {
       title: "MySQL",
       type: "Live class",
-      time: "9:00 am - 1:00 pm",
+      time: "1:00 pm",
     },
     {
       title: "Core Java Lec : 2",
       type: "Recorded class",
-      time: "Duration: 2 hours",
+      time: "5:00 pm",
     },
   ],
 };
@@ -95,10 +105,13 @@ function CalendarCarousel() {
   const isSelected = (date) => date.isSame(selectedDate, "day");
 
   return (
-    <div className="mx-3 md:ml-10">
-      <div className="w-full md:w-[95%] mx-auto my-4 px-4 py-6 relative border-[#D9D9D9] border rounded-lg bg-white">
+    <div className="">
+      <div
+        className="w-full mx-auto my-4 px-4 py-2 relative border-[#D9D9D9] border rounded-lg bg-white flex flex-col"
+        style={{ height: "400px" }} 
+      >
         {/* Header */}
-        <div className="flex justify-start gap-2 items-center mb-3">
+        <div className="flex justify-start gap-2 items-center mb-3 flex-shrink-0">
           <button
             onClick={goToPreviousMonth}
             className="p-1 rounded-full hover:bg-gray-100"
@@ -117,7 +130,10 @@ function CalendarCarousel() {
         </div>
 
         {/* Calendar Row */}
-        <div ref={scrollRef} className="flex gap-4 overflow-x-auto pb-4">
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto pb-4 flex-shrink-0"
+        >
           {days.map((date) => {
             const key = date.format("YYYY-MM-DD");
             const classCount = classData[key] || 0;
@@ -135,12 +151,9 @@ function CalendarCarousel() {
                 } ${todayMatch ? "today-date" : ""}`}
               >
                 <div className="flex items-center justify-between">
-                  <p className="text-xxs font-semibold">
-                    {date.format("dddd")}
-                  </p>
+                  <p className="text-xxs font-semibold">{date.format("dddd")}</p>
                   {todayMatch && (
                     <div className="flex items-center gap-1">
-                      {/* <p className="ml-auto text-xxxs font-semibold">Today</p> */}
                       <div className="relative flex items-center justify-center">
                         <span className="absolute inline-flex h-3 w-3 rounded-full bg-green-300 opacity-75 animate-ping"></span>
                         <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
@@ -148,17 +161,15 @@ function CalendarCarousel() {
                     </div>
                   )}
                 </div>
-                <p className="text-4xl font-display my-2.5">{date.date()}</p>
-                <p className="text-xxs flex justify-end">
-                  {classCount} classes
-                </p>
+                <p className="text-3xl font-semibold my-2.5">{date.date()}</p>
+                <p className="text-xxs flex justify-end">{classCount} classes</p>
               </div>
             );
           })}
         </div>
 
         {/* Class Details */}
-        <div>
+        <div className="overflow-y-auto mt-2" style={{ flex: 1 }}>
           <ClassSchedule selectedDate={selectedDate} classData={classDetails} />
         </div>
       </div>

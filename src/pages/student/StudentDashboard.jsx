@@ -1,10 +1,10 @@
 import React from "react";
 import CalendarCarousel from "../../components/student-components/CalendarCarousel";
-
 import profileImage from "../../assets/propicture.jpeg";
 import { useAuth } from "../../context/AuthContext";
-import { jwtDecode } from "jwt-decode";
 import ProgressTracking from "../../components/student-components/ProgressTracking";
+import fire from "../../assets/fire.png";
+import vector from "../../assets/Vector.png";
 
 function StudentDashboard() {
   const { studentAuth } = useAuth();
@@ -14,38 +14,39 @@ function StudentDashboard() {
   //console.log("Decode : ",decoded);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen  py-5 px-4 md:px-15 lg:px-4">
       {/* Welcome Message */}
-      <div className="w-full flex items-center justify-center sm:mt-15">
-        <div className="basis-1/3 flex justify-center">
-          <img
-            className="object-cover rounded-full w-18 h-18 sm:w-25 sm:h-25 md:w-30 md:h-30 lg:w-30 lg:h-30"
-            src={profileImage}
-            alt="Profile"
-          />
-        </div>
-        <div className="basis-2/3">
-          <h3 className="font-semibold font-sans text-2xl sm:text-5xl">
-            Welcome back,
-          </h3>
-          <h3 className="font-sans font-semibold text-3xl sm:text-6xl py-1 sm:py-2 text-center bg-gradient-to-r from-[#9D5CFF] to-[#9D5CFF] text-transparent bg-clip-text">
-            {studentAuth.name?.split(" ")[0]}
-          </h3>
+      <div
+        className="w-full flex justify-between gap-6 items-center px-6 py-6 md:py-10 md:px-15 rounded-2xl bg-[#9D5CFF]"
+        style={{
+          backgroundImage: `url(${vector})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <h1 className="font-inter font-bold text-white text-xl md:text-3xl">
+          Welcome back, Adhithya
+        </h1>
+        <div className="flex py-1 px-2 lg:p-3 font-inter rounded-2xl items-center text-xxs md:text-sm bg-white">
+          <img className="w-3 h-4 md:w-5 md:h-6" src={fire} alt="fire" />
+          <span className="ml-1 md:ml-2">Streak: </span>
+          <p className="ml-1 md:ml-2">4 days</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Calender */}
-        <div className="flex flex-col md:mt-3">
-          <h2 className="font-semibold text-2xl sm:text-3xl ml-[5%] mt-10 md:ml-15">
-            Calender Schedule
+        <div className="flex flex-col">
+          <h2 className="font-semibold text-2xl mt-10">
+            Upcoming Classes & Events
           </h2>
           <CalendarCarousel />
         </div>
 
         {/* Progress Tracking */}
-        <div className="flex flex-col md:mt-3">
-          <h2 className="font-semibold text-2xl sm:text-3xl ml-[5%] mt-10">
+        <div className="flex flex-col">
+          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
             Progress Tracking
           </h2>
           <ProgressTracking />

@@ -21,26 +21,27 @@ function ProgressCard({ progress, course }) {
   }, [progress]);
 
   return (
-    <div className="mb-0.5 md:mb-3">
-      <div className="w-full max-w-md p-1 md:p-3 border border-gray-300 rounded-md shadow-sm">
-        <div className="flex justify-between items-center mb-1 md:mb-3">
-          <h2 className="text-xs md:text-sm font-semibold text-gray-800">
+      <div className="w-full rounded-sm text-xxs px-5 py-1 overflow-hidden border border-[#B8B8B8] mb-4 shadow-sm">
+        <div className="flex justify-between items-center mb-1 md:mb-2">
+          <h2 className="text-xs font-semibold text-gray-800">
             {course}
           </h2>
-          <button className="px-4 md:px-5 text-xxxs md:text-xs font-normal cursor-pointer border border-gray-300 rounded-full hover:bg-gray-100">
+          <button className="px-4 md:px-5 text-xxs font-normal cursor-pointer border border-[#B8B8B8] rounded-full hover:bg-gray-100">
             Resume
           </button>
         </div>
 
-        <div className="w-full h-1.5 md:h-2 bg-gray-200 rounded-full overflow-hidden mb-1">
+        <div className="w-full h-1.5 md:h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-[#9D5CFF] rounded-full transition-all duration-300"
             style={{ width: `${animatedProgress}%` }}
           ></div>
         </div>
+
+        <p className="text-xxs font-normal ml-1">
+          {animatedProgress}% complete
+        </p>
       </div>
-      <p className="text-xxs font-normal ml-1">{animatedProgress}% complete</p>
-    </div>
   );
 }
 

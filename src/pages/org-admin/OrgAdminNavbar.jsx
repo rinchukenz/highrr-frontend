@@ -1,15 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 import { Bell, User, Menu } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
 import axios from "axios";
-import LogOutButton from "./LogoutButton";
-import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
+// import LogOutButton from "./LogoutButton";
+// import CustomInput from "./CustomInput";
+// import CustomButton from "./CustomButton";
+import Sidebar from "../../components/common-components/Sidebar";
+import LogOutButton from "../../components/common-components/LogoutButton";
+import CustomInput from "../../components/common-components/CustomInput";
+import CustomButton from "../../components/common-components/CustomButton";
 
-function Navbar({ toggleSidebar }) {
+function OrgAdminNavbar({ toggleSidebar }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -227,4 +231,4 @@ function Navbar({ toggleSidebar }) {
   );
 }
 
-export default Navbar;
+export default OrgAdminNavbar;
