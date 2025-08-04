@@ -155,7 +155,7 @@ const FeaturedCourses = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#FCECFF] via-white to-white px-4 sm:px-6 lg:px-20 pt-10 pb-20 md:py-20">
+    <section className="bg-gradient-to-b from-[#FCECFF] via-white to-white px-4 sm:px-6 lg:px-20 pt-30 pb-20 md:py-20">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-ibm font-semibold mb-5">
         Featured Courses
       </h1>
