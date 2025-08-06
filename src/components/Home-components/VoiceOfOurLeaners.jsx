@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "The AI-powered mock interviews and coding labs helped me overcome my fear of real interviews. I now feel way more confident and prepared. Practicing every day with instant feedback made a huge difference in how I approach problem-solving.",
+      "The AI-powered mock interviews and coding labs helped me overcome my fear of real interviews. I now feel way more confident and prepared.",
     name: "Priya Sharma, Final Year Student",
     role: "ABC Institute of Technology",
     image: "https://i.pravatar.cc/100?img=1",

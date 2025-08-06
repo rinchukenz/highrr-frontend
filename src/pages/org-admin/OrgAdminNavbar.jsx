@@ -28,30 +28,12 @@ function OrgAdminNavbar({ toggleSidebar }) {
   const navigate = useNavigate();
 
   const getHeaderTitle = () => {
-    if (location.pathname.includes("/student/courses")) return "Courses";
-    if (location.pathname.includes("my-courses")) return "My Courses";
     if (location.pathname.includes("students")) return "Students";
-    if (location.pathname.includes("assignments")) return "Assignments";
     if (location.pathname.includes("exams")) return "Exams";
-    if (location.pathname.includes("interviews")) return "AI Mock Interview";
-    if (location.pathname.includes("calendar")) return "Calendar";
-    if (location.pathname.includes("resume-builder")) return "Resume Builder";
-    if (location.pathname.includes("certificates")) return "Certificates";
-    if (location.pathname.includes("settings")) return "Settings";
-    if (location.pathname.includes("assessments")) return "Assessments";
+    if (location.pathname.includes("question-bank")) return "Question Bank";
     if (location.pathname.includes("video-library")) return "Video Library";
-    if (location.pathname.includes("grades")) return "Grades";
-    if (location.pathname.includes("schedule")) return "Schedule";
-    if (location.pathname.includes("admin-requests")) return "Admin Requests";
-    if (location.pathname.includes("admin-management"))
-      return "Admin Management";
-    if (location.pathname.includes("org-admins")) return "Organization Admins";
-    if (location.pathname.includes("organizations")) return "Organizations";
     if (location.pathname.includes("/leaderboard")) return "Leaderboard";
-    if (location.pathname.includes("transactions")) return "Transactions";
     if (location.pathname.includes("courses")) return "Courses";
-    if (location.pathname.includes("support")) return "Support";
-    if (location.pathname.includes("analytics")) return "Analytics";
     if (
       location.pathname === "/student" ||
       location.pathname === "/instructor" ||

@@ -565,3 +565,15 @@ export const publishContent = (contentId) => {
 export const unpublishContent = (contentId) => {
   return axiosInstance.put(`/contents/${contentId}/unpublish`);
 };
+
+
+
+//EXAMS
+
+export const addQuestion = (payload) => {
+  return axiosInstance.post(`/exams/questions`, payload);
+}
+
+export const getAllQuestions = () => {
+  return axiosInstance.get(`/exams/questions`);
+}

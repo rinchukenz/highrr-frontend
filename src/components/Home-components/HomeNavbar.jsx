@@ -87,31 +87,31 @@ function HomeNavbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white text-gray-800 px-4 pb-4 space-y-4 text-sm font-medium">
+        <div className="lg:hidden bg-white text-gray-800 px-4 py-4 space-y-4 text-sm font-medium">
           <span className="block cursor-pointer hover:text-violet-600">
-            Resources
+            Explore
           </span>
           <span className="block cursor-pointer hover:text-violet-600">
-            How we do it
+            Organization
           </span>
           <span className="block cursor-pointer hover:text-violet-600">
-            Features
+            Careers
           </span>
-          <span className="block cursor-pointer hover:text-violet-600">
+          {/* <span className="block cursor-pointer hover:text-violet-600">
             Pricing
-          </span>
+          </span> */}
 
           <hr className="my-2" />
 
           <button
             onClick={() => navigate("/signup")}
-            className="w-full px-4 py-2 text-sm border border-violet-600 text-violet-600 rounded-md hover:bg-violet-50"
+            className="w-full px-4 py-2 text-sm border border-[#9D5CFF] text-[#9D5CFF] rounded-md hover:bg-violet-50"
           >
             Sign Up
           </button>
           <button
             onClick={() => navigate("/login/student")}
-            className="w-full px-4 py-2 text-sm bg-violet-600 text-white rounded-md hover:bg-violet-700"
+            className="w-full px-4 py-2 text-sm bg-[#9D5CFF] text-white rounded-md hover:bg-violet-700"
           >
             Log In
           </button>

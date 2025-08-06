@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "The automated mock interviews and coding labs have been a game changer. Our students are more confident, engaged, and industry-ready. Branding it under our name made it feel truly ours — parents and students trust us more than ever.",
+      "The automated mock interviews and coding labs have been a game changer. Our students are more confident, engaged, and industry-ready.",
     name: "David John, Founder",
     role: "ABC Training Institute",
     image: "https://i.pravatar.cc/100?img=1",

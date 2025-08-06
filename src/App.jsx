@@ -50,6 +50,7 @@ import Home from "./pages/Home";
 import HomeForOrg from "./pages/HomeForOrg";
 import LoginStudent from "./components/Login-Form/LoginStudent";
 import LoginAdmin from "./components/Login-Form/LoginAdmin";
+import QuestionBank from "./components/orgadmin-components/Exam-management/QuestionBank";
 
 function App() {
   return (
@@ -61,6 +62,20 @@ function App() {
         <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/login/student" element={<LoginStudent />} />
         <Route path="/signup" element={<SignUpPage />} />
+
+        {/* <Route path="/demo" element={<StudentHome />}>
+            <Route index element={<StudentDashboard />} />
+            <Route path="assignments" element={<Assingments />} />
+            <Route path="exams" element={<ComingSoon />} />
+            <Route path="interviews" element={<InterviewPage />} />
+            <Route path="courses" element={<ComingSoon />} />
+            <Route path="profile" element={<ComingSoon />} />
+            <Route path="calendar" element={<ComingSoon />} />
+            <Route path="resume-builder" element={<ComingSoon />} />
+            <Route path="certificates" element={<ComingSoon />} />
+            <Route path="settings" element={<ComingSoon />} />
+          </Route> */}
+        
 
         {/* Student Routes */}
         <Route element={<ProtectedRoute allowedRoles={["USER"]} />}>
@@ -110,6 +125,7 @@ function App() {
             <Route path="courses/:cId/add-content" element={<AddContent />} />
             <Route path="courses/:cId/syllabus" element={<CourseSyllabus />} />
             <Route path="exams" element={<ComingSoon />} />
+            <Route path="question-bank" element={<QuestionBank />} />
             <Route path="video-library" element={<VideoLibrary />} />
             <Route path="certificates" element={<ComingSoon />} />
             <Route path="support" element={<ComingSoon />} />

@@ -15,8 +15,12 @@ import {
   MdSupportAgent,
   MdInsights,
   MdSettings,
+  MdVideoLibrary,
   MdLogout,
+  MdAccountBalance,
 } from "react-icons/md";
+
+
 import { useAuth } from "../../context/AuthContext";
 import SideOption from "../../components/common-components/SideOption";
 
@@ -96,10 +100,18 @@ function OrgAdminSidebar() {
           />
         </Link>
 
+        <Link to="/orgadmin/question-bank">
+          <SideOption
+            text="Question Bank"
+            Icon={MdAccountBalance}
+            isActive={activeOption === "Question Bank"}
+          />
+        </Link>
+
         <Link to="/orgadmin/video-library">
           <SideOption
             text="Video Library"
-            Icon={MdCalendarToday}
+            Icon={MdVideoLibrary}
             isActive={activeOption === "Video Library"}
           />
         </Link>
