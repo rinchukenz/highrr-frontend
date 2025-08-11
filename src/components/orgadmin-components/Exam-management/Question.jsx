@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getQuestionById } from "../../../services/OrgAdminService";
+import { div } from "framer-motion/client";
 
 function Question() {
   const { qid } = useParams();
@@ -108,6 +109,15 @@ function Question() {
             </ul>
           </div>
         )}
+
+        {
+          question.type === "LONG_ANSWER" && (
+            <div>
+              <h2 className="text-lg font-semibold mb-2">Key Answer</h2>
+              <p className="text-gray-600">{question.keyAnswer}</p>
+            </div>
+          )
+        }
       </div>
     </div>
   );

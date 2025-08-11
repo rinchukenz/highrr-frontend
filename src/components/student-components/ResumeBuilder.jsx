@@ -5,7 +5,7 @@ import vector from "../../assets/Vector.png";
 function ResumeBuilder() {
   return (
     <div
-      className="w-full flex my-4 px-6 py-4 bg-[#9D5CFF] rounded-lg border border-[#B8B8B8]"
+      className="w-full flex font-inter my-4 px-6 py-4 bg-[#9D5CFF] rounded-lg border border-[#B8B8B8]"
       style={{
         backgroundImage: `url(${vector})`,
         backgroundRepeat: "no-repeat",

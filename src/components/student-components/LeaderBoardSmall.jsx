@@ -29,7 +29,7 @@ function LeaderBoardSmall() {
   ];
 
   return (
-    <div className="border px-6 border-[#B8B8B8] rounded-lg my-4 py-6 h-[304px]">
+    <div className="border px-6 font-inter border-[#B8B8B8] rounded-lg my-4 py-6 h-[304px]">
       {/* Header */}
       <div className="flex justify-between items-center mb-10">
         <h2 className="font-semibold text-lg flex items-center gap-2">

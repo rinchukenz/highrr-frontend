@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import SideOption from "../../components/common-components/SideOption";
-import orgLogo from "../../assets/org-logo.png";
+import orgLogo from "../../assets/apple.png";
 
 import {
   LayoutDashboard,
@@ -43,11 +43,11 @@ function StudentSidebar() {
   const activeOption = getActiveOption();
 
   return (
-    <div className="h-full w-full flex flex-col items-center py-6 gap-8 bg-[#F9F9F9] border-r border-[#B8B8B8] overflow-y-auto">
+    <div className="h-full w-full font-inter flex flex-col items-center py-6 gap-8 bg-[#F9F9F9] border-r border-[#B8B8B8] overflow-y-auto">
       {/* Header */}
-      <div className="flex items-center justify-center gap-2">
-        <img className="w-5 h-5" src={orgLogo} alt="" />
-        <h3 className="font-bold text-lg text-black">sololearn</h3>
+      <div className="flex items-center justify-center gap-3">
+        <img className="w-8 h-8" src={orgLogo} alt="" />
+        <h3 className="font-bold text-2xl text-black">Apple</h3>
       </div>
 
       {/* Sidebar Options */}

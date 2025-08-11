@@ -12,7 +12,7 @@ function AddQuestionModal({ onClose }) {
     description: "",
     difficulty: "EASY",
     topic: "",
-    createdBy: 11, 
+    createdBy: 10, 
     tags: [],
     options: [{ optionText: "", correct: false }],
     codingTestCases: [{ input: "", expectedOutput: "", isSample: false }],

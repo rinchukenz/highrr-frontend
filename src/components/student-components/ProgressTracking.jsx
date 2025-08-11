@@ -6,9 +6,8 @@ import checkCircle from "../../assets/check-circle.png";
 
 function ProgressTracking() {
   return (
-    <div className="">
       <div
-        className="w-full mx-auto my-4 px-3 py-2 relative border-[#D9D9D9] border rounded-lg bg-white flex flex-col"
+        className="w-full mx-auto my-4 px-3 py-2 relative font-inter border-[#D9D9D9] border rounded-lg bg-white flex flex-col"
         style={{ height: "400px" }} // Fixed Height
       >
         {/* Header Section */}
@@ -40,13 +39,15 @@ function ProgressTracking() {
         </div>
 
         {/* Scrollable Recent Courses */}
-        <div className="overflow-y-auto mt-7 px-5 flex-1">
+        <div className="mt-7 px-5 flex-1">
           <h3 className="mb-2 md:mb-3 text-sm font-semibold text-gray-700">
             Recent Courses:
           </h3>
-          <ProgressCard progress={59} course={"React Native Basics"} />
-          <ProgressCard progress={80} course={"Python Introduction"} />
-          <ProgressCard progress={65} course={"Springboot microservices"} />
+          <div className="overflow-y-auto h-[150px]" style={{ flex: 1 }}>
+            <ProgressCard progress={59} course={"React Native Basics"} />
+            <ProgressCard progress={80} course={"Python Introduction"} />
+            <ProgressCard progress={65} course={"Springboot microservices"} />
+          </div>
           {/* You can add more ProgressCard components here */}
         </div>
 
@@ -59,7 +60,6 @@ function ProgressTracking() {
           </div>
         </div> */}
       </div>
-    </div>
   );
 }
 

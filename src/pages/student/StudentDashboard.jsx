@@ -21,7 +21,7 @@ function StudentDashboard() {
     <div className="min-h-screen  py-5 px-4 md:px-15 lg:px-4">
       {/* Welcome Message */}
       <div
-        className="w-full flex justify-between gap-6 items-center px-6 py-6 md:py-10 md:px-15 rounded-2xl bg-[#9D5CFF]"
+        className="w-full flex font-inter justify-between gap-6 items-center px-6 py-6 md:py-10 md:px-15 rounded-2xl bg-[#9D5CFF]"
         style={{
           backgroundImage: `url(${vector})`,
           backgroundRepeat: "no-repeat",
@@ -30,7 +30,7 @@ function StudentDashboard() {
         }}
       >
         <h1 className="font-inter font-bold text-white text-xl md:text-3xl">
-          Welcome back, Adhithya
+          Welcome back, {studentAuth?.name.split(" ")[0]}
         </h1>
         <div className="flex py-1 px-2 lg:p-3 font-inter rounded-lg items-center text-xxs md:text-sm bg-white">
           <img className="w-3 h-4 md:w-5 md:h-6" src={fire} alt="fire" />
@@ -42,7 +42,7 @@ function StudentDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Calender */}
         <div className="flex flex-col">
-          <h2 className="font-semibold text-2xl mt-10">
+          <h2 className="font-semibold font-inter text-2xl mt-10">
             Upcoming Classes & Events
           </h2>
           <CalendarCarousel />
@@ -50,7 +50,7 @@ function StudentDashboard() {
 
         {/* Progress Tracking */}
         <div className="flex flex-col">
-          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+          <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             Progress Tracking
           </h2>
           <ProgressTracking />
@@ -58,7 +58,7 @@ function StudentDashboard() {
       </div>
 
       <div className="w-full">
-        <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+        <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             Placement Opportunities
           </h2>
         <PlacementOppertunities />
@@ -66,13 +66,13 @@ function StudentDashboard() {
 
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-7">
-          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+          <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             AI Suggestions
           </h2>
           <AiSuggestions />
         </div>
         <div className="col-span-5">
-          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+          <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             Placement Opportunities
           </h2>
           <LeaderBoardSmall />
@@ -80,7 +80,7 @@ function StudentDashboard() {
       </div>
 
       <div className="w-full">
-        <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+        <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             Resume Builder
           </h2>
         <ResumeBuilder />

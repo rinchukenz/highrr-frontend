@@ -1,7 +1,5 @@
-
+import { div } from "framer-motion/client";
 import React from "react";
-
-
 
 // Single class card
 const ClassCard = ({ title, type, time }) => (
@@ -24,7 +22,9 @@ const ClassCard = ({ title, type, time }) => (
       <h3 className="font-semibold text-xs">Live Class: Data Structures</h3>
       <p>Instructor: Prof. Shalini Verma - Zoom</p>
     </div>
-    <button className="bg-[#9D5CFF] py-1 px-3 text-white text-xxs cursor-pointer rounded-2xl">join now</button>
+    <button className="bg-[#9D5CFF] py-1 px-3 text-white text-xxs cursor-pointer rounded-2xl">
+      join now
+    </button>
   </div>
 );
 
@@ -41,11 +41,19 @@ const ClassSchedule = ({ selectedDate, classData }) => {
       <h2 className="text-sm font-semibold text-gray-700 mb-3">
         Classes and Events on {formattedDate}:
       </h2>
-      {classes.length > 0 ? (
-        classes.map((classItem, idx) => <ClassCard key={idx} {...classItem} />)
-      ) : (
-        <p className="text-gray-400 text-3xl mt-15">No classes scheduled.</p>
-      )}
+      <div className="overflow-y-auto h-[150px]" style={{ flex: 1 }}>
+        {classes.length > 0 ? (
+          classes.map((classItem, idx) => (
+            <ClassCard key={idx} {...classItem} />
+          ))
+        ) : (
+          <div className="flex flex-col justify-center border-[1.5px] border-dashed px-6 border-[#B8B8B8] rounded-lg py-6 h-[150px]">
+            <p className="text-gray-600 text-center text-sm">
+              No classes scheduled.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

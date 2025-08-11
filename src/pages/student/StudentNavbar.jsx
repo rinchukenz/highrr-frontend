@@ -106,7 +106,7 @@ function StudentNavbar({ toggleSidebar }) {
   console.log(role);
 
   return (
-    <div className="h-16 sm:h-20 px-4 bg-white flex items-center justify-between relative">
+    <div className="h-16 sm:h-20 px-4 font-inter bg-white flex items-center justify-between relative">
       <div className="flex items-center gap-10">
         {/* Page Title */}
         <h1 className="text-xl sm:text-2xl font-semibold text-black">

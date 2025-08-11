@@ -105,9 +105,8 @@ function CalendarCarousel() {
   const isSelected = (date) => date.isSame(selectedDate, "day");
 
   return (
-    <div className="">
       <div
-        className="w-full mx-auto my-4 px-4 py-2 relative border-[#D9D9D9] border rounded-lg bg-white flex flex-col"
+        className="w-full mx-auto my-4 px-4 py-2 relative font-inter border-[#D9D9D9] border rounded-lg bg-white flex flex-col"
         style={{ height: "400px" }} 
       >
         {/* Header */}
@@ -169,11 +168,10 @@ function CalendarCarousel() {
         </div>
 
         {/* Class Details */}
-        <div className="overflow-y-auto mt-2" style={{ flex: 1 }}>
+        <div className="mt-2" style={{ flex: 1 }}>
           <ClassSchedule selectedDate={selectedDate} classData={classDetails} />
         </div>
       </div>
-    </div>
   );
 }
 

@@ -1,7 +1,6 @@
 import LoginPage from "./pages/LoginPage";
 import { Routes, Route } from "react-router-dom";
 import SignUpPage from "./pages/SignUpPage";
-// import Dashboard from "./components/Dashboard/Dashboard";
 import Courses from "./components/orgadmin-components/Courses";
 import Assingments from "./components/student-components/Assingments";
 import StudentHome from "./pages/student/StudentHome";
@@ -13,10 +12,7 @@ import OrgAdminDashboard from "./pages/org-admin/OrgAdminDashboard";
 import InstructorHome from "./pages/instructor/InstructorHome";
 import InstructorDashboard from "./pages/instructor/InstructorDashboard";
 import ComingSoon from "./components/common-components/ComingSoon";
-import Organizations from "./components/superadmin-components/Organizations";
-//import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRequests from "./components/superadmin-components/AdminRequests";
-import OrgAdmins from "./components/superadmin-components/AdminRequests";
 import AdminManagement from "./components/superadmin-components/AdminManagement";
 //import Orgs from "./components/Orgs";
 // import AddOrg from "./components/AddOrg";
@@ -68,7 +64,7 @@ function App() {
         <Route path="/login/student" element={<LoginStudent />} />
         <Route path="/signup" element={<SignUpPage />} />
 
-        <Route path="/demo" element={<StudentHome />}>
+        {/* <Route path="/demo" element={<StudentHome />}>
             <Route index element={<StudentDashboard />} />
             <Route path="assignments" element={<Assingments />} />
             <Route path="exams" element={<ComingSoon />} />
@@ -79,7 +75,7 @@ function App() {
             <Route path="resume-builder" element={<ComingSoon />} />
             <Route path="certificates" element={<ComingSoon />} />
             <Route path="settings" element={<ComingSoon />} />
-          </Route>
+          </Route> */}
         
 
         {/* Student Routes */}

@@ -3,7 +3,7 @@ import aiImage from "../../assets/Group.svg";
 
 function AiSuggestions() {
   return (
-    <div className="flex items-center gap-3 h-[304px] my-4 border px-4 border-[#B8B8B8] rounded-lg py-10">
+    <div className="flex items-center font-inter gap-3 h-[304px] my-4 border px-4 border-[#B8B8B8] rounded-lg py-10">
       <div>
         <img src={aiImage} alt="" />
       </div>
