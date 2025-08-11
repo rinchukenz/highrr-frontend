@@ -577,3 +577,27 @@ export const addQuestion = (payload) => {
 export const getAllQuestions = () => {
   return axiosInstance.get(`/exams/questions`);
 }
+
+export const deleteQuestion = (id) => {
+  return axiosInstance.delete(`/exams/questions/${id}`);
+}
+
+export const createExam = (payload) => {
+  return axiosInstance.post(`/exams`, payload);
+}
+
+export const getExams = () => {
+  return axiosInstance.get(`/exams`);
+}
+
+export const getQuestionById = (id) => {
+  return axiosInstance.get(`/exams/questions/${id}`);
+}
+
+export const getExamById = (id) => {
+  return axiosInstance.get(`/exams/${id}`);
+}
+
+export const deleteExam = (id) => {
+  return axiosInstance.delete(`/exams/${id}`);
+}

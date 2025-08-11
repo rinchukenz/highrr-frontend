@@ -5,6 +5,10 @@ import { useAuth } from "../../context/AuthContext";
 import ProgressTracking from "../../components/student-components/ProgressTracking";
 import fire from "../../assets/fire.png";
 import vector from "../../assets/Vector.png";
+import PlacementOppertunities from "../../components/student-components/PlacementOppertunities";
+import AiSuggestions from "../../components/student-components/AiSuggestions";
+import LeaderBoardSmall from "../../components/student-components/LeaderBoardSmall";
+import ResumeBuilder from "../../components/student-components/ResumeBuilder";
 
 function StudentDashboard() {
   const { studentAuth } = useAuth();
@@ -28,7 +32,7 @@ function StudentDashboard() {
         <h1 className="font-inter font-bold text-white text-xl md:text-3xl">
           Welcome back, Adhithya
         </h1>
-        <div className="flex py-1 px-2 lg:p-3 font-inter rounded-2xl items-center text-xxs md:text-sm bg-white">
+        <div className="flex py-1 px-2 lg:p-3 font-inter rounded-lg items-center text-xxs md:text-sm bg-white">
           <img className="w-3 h-4 md:w-5 md:h-6" src={fire} alt="fire" />
           <span className="ml-1 md:ml-2">Streak: </span>
           <p className="ml-1 md:ml-2">4 days</p>
@@ -52,6 +56,36 @@ function StudentDashboard() {
           <ProgressTracking />
         </div>
       </div>
+
+      <div className="w-full">
+        <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+            Placement Opportunities
+          </h2>
+        <PlacementOppertunities />
+      </div>
+
+      <div className="grid grid-cols-12 gap-8">
+        <div className="col-span-7">
+          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+            AI Suggestions
+          </h2>
+          <AiSuggestions />
+        </div>
+        <div className="col-span-5">
+          <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+            Placement Opportunities
+          </h2>
+          <LeaderBoardSmall />
+        </div>
+      </div>
+
+      <div className="w-full">
+        <h2 className="font-semibold text-2xl mt-2 lg:mt-10">
+            Resume Builder
+          </h2>
+        <ResumeBuilder />
+      </div>
+
     </div>
   );
 }

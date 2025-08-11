@@ -38,7 +38,7 @@ function AddOrg() {
         maxStudents: "",
       });
     } catch (err) {
-      toast.error("Signup failed");
+      toast.error("Organization registration failed");
     }
   };
 

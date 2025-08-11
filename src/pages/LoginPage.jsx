@@ -12,7 +12,7 @@ function LoginPage() {
     <div className="max-h-screen min-h-screen flex flex-col lg:flex-row">
       {/* Image Container */}
       <div
-        className="hidden lg:block relative lg:w-1/2 lg:h-auto"
+        className="hidden lg:block relative lg:w-1/2 lg:h-full"
         style={{
           backgroundImage: `url(${loginImage})`,
           backgroundSize: "cover",
@@ -47,7 +47,7 @@ function LoginPage() {
       </div>
 
       {/* Form Container */}
-      <div className="w-full lg:w-1/2 bg-white flex flex-col gap-5 justify-center px-8 sm:px-16 md:px-24 lg:px-32 py-10">
+      <div className="w-full lg:w-1/2 lg bg-white flex flex-col gap-5 justify-center px-8 sm:px-16 md:px-24 lg:px-32 py-10">
         {/* Welcome Texts */}
         <div className="text-black flex flex-col gap-4 mb-6">
           <h2 className="text-4xl font-semibold">Welcome Back </h2>

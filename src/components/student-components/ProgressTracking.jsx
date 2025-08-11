@@ -44,7 +44,7 @@ function ProgressTracking() {
           <h3 className="mb-2 md:mb-3 text-sm font-semibold text-gray-700">
             Recent Courses:
           </h3>
-          <ProgressCard progress={50} course={"React Native Basics"} />
+          <ProgressCard progress={59} course={"React Native Basics"} />
           <ProgressCard progress={80} course={"Python Introduction"} />
           <ProgressCard progress={65} course={"Springboot microservices"} />
           {/* You can add more ProgressCard components here */}

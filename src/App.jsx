@@ -51,6 +51,11 @@ import HomeForOrg from "./pages/HomeForOrg";
 import LoginStudent from "./components/Login-Form/LoginStudent";
 import LoginAdmin from "./components/Login-Form/LoginAdmin";
 import QuestionBank from "./components/orgadmin-components/Exam-management/QuestionBank";
+import SuperCourses from "./components/superadmin-components/SuperCourses";
+import ExamCreationPage from "./components/orgadmin-components/Exam-management/ExamCreationPage";
+import ExamsAvailable from "./components/orgadmin-components/Exam-management/ExamsAvailable";
+import Question from "./components/orgadmin-components/Exam-management/Question";
+import ExamPage from "./components/orgadmin-components/Exam-management/ExamPage";
 
 function App() {
   return (
@@ -63,7 +68,7 @@ function App() {
         <Route path="/login/student" element={<LoginStudent />} />
         <Route path="/signup" element={<SignUpPage />} />
 
-        {/* <Route path="/demo" element={<StudentHome />}>
+        <Route path="/demo" element={<StudentHome />}>
             <Route index element={<StudentDashboard />} />
             <Route path="assignments" element={<Assingments />} />
             <Route path="exams" element={<ComingSoon />} />
@@ -74,7 +79,7 @@ function App() {
             <Route path="resume-builder" element={<ComingSoon />} />
             <Route path="certificates" element={<ComingSoon />} />
             <Route path="settings" element={<ComingSoon />} />
-          </Route> */}
+          </Route>
         
 
         {/* Student Routes */}
@@ -99,7 +104,7 @@ function App() {
           <Route path="/superadmin" element={<SuperAdminHome />}>
             <Route index element={<SuperAdminDashboard />} />
             <Route path="org-admins" element={<AdminRequests />} />
-            <Route path="courses" element={<SuperAdminCourses />} />
+            <Route path="courses" element={<SuperCourses />} />
             <Route path="organizations" element={<Orgs />} />
             <Route path="organizations/addorg" element={<AddOrg />} />
             <Route path="organizations/addadmin/:orgId" element={<AdminReg />} />
@@ -124,8 +129,11 @@ function App() {
             <Route path="update-course/:cId" element={<AddCourse />} />
             <Route path="courses/:cId/add-content" element={<AddContent />} />
             <Route path="courses/:cId/syllabus" element={<CourseSyllabus />} />
-            <Route path="exams" element={<ComingSoon />} />
+            <Route path="exams" element={<ExamsAvailable />} />
+            <Route path="exams/:eid" element={<ExamPage />} />
+            <Route path="exams/create-exam" element={<ExamCreationPage />} />
             <Route path="question-bank" element={<QuestionBank />} />
+            <Route path="question-bank/:qid" element={<Question />} />
             <Route path="video-library" element={<VideoLibrary />} />
             <Route path="certificates" element={<ComingSoon />} />
             <Route path="support" element={<ComingSoon />} />

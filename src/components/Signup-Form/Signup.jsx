@@ -65,7 +65,7 @@ function Signup() {
         name,
         email,
         password,
-        mobile,
+        mobile: countryCode + mobile,
       });
 
       const { info } = res.data;

@@ -1,24 +1,31 @@
 import React from "react";
-import resume from "../../assets/resume.png";
+import resume from "../../assets/resume-builder-img.svg";
+import vector from "../../assets/Vector.png";
 
 function ResumeBuilder() {
   return (
-    <div className="flex justify-between items-center bg-[#CD68FF] rounded-2xl p-6 mt-5">
-      {/* Left section */}
-      <div className="max-w-[60%]">
-        <h2 className="text-white text-lg font-semibold mb-2">New</h2>
-        <p className="text-white text-11px leading-3.5 mb-4">
-          Create a professional resume in minutes using our guided resume builder. 
-          Customize your information, download in PDF format, and be ready for your next opportunity.
+    <div
+      className="w-full flex my-4 px-6 py-4 bg-[#9D5CFF] rounded-lg border border-[#B8B8B8]"
+      style={{
+        backgroundImage: `url(${vector})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="flex-1/2 flex flex-col justify-center text-white items-start space-y-4 w-1/2">
+        <h1 className="font-bold text-lg font-inter">New</h1>
+        <p className="text-lg font-inter">
+          Create a professional resume in minutes using our guided resume
+          builder. Customize your information, download in PDF format, and be
+          ready for your next opportunity.
         </p>
-        <button className="bg-white text-black text-sm font-medium py-1 px-4 rounded-full shadow-md hover:bg-gray-100 transition">
+        <button className="bg-white px-12 py-3 text-black font-semibold rounded-3xl text-xs">
           Create a resume
         </button>
       </div>
-
-      {/* Right section */}
-      <div className="w-2/5 flex justify-end">
-        <img src={resume} alt="Resume Illustration" className="max-h-40 object-contain" />
+      <div className="flex-1/2 flex justify-end items-center">
+        <img className="lg:h-[200px] my-auto" src={resume} alt="" />
       </div>
     </div>
   );

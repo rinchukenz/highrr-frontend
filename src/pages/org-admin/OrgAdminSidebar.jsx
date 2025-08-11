@@ -42,7 +42,7 @@ function OrgAdminSidebar() {
     if (location.pathname.includes("/transactions")) return "Transactions";
     if (location.pathname.includes("/courses")) return "Courses";
     if (location.pathname.includes("/certificates")) return "Certificates";
-    if (location.pathname.includes("/support")) return "Support";
+    if (location.pathname.includes("/question-bank")) return "Question Bank";
     if (location.pathname.includes("/analytics")) return "Analytics";
     if (location.pathname.includes("/settings")) return "Settings";
     return "";
