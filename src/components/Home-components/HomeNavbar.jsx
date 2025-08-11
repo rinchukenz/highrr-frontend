@@ -68,7 +68,7 @@ function HomeNavbar() {
           >
             Sign Up
           </button>
-          <div className="border border-[#ABABAB] rounded-full p-2">
+          <div onClick={() => navigate("/demo")} className="border border-[#ABABAB] rounded-full p-2">
             <img src={language} alt="language" className="w-5 h-5" />
           </div>
         </div>
