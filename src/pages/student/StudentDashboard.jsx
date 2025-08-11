@@ -30,7 +30,7 @@ function StudentDashboard() {
         }}
       >
         <h1 className="font-inter font-bold text-white text-xl md:text-3xl">
-          Welcome back, {studentAuth?.name.split(" ")[0]}
+          Welcome back, {studentAuth?.name?.split(" ")[0]}
         </h1>
         <div className="flex py-1 px-2 lg:p-3 font-inter rounded-lg items-center text-xxs md:text-sm bg-white">
           <img className="w-3 h-4 md:w-5 md:h-6" src={fire} alt="fire" />

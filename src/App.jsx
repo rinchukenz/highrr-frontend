@@ -64,7 +64,7 @@ function App() {
         <Route path="/login/student" element={<LoginStudent />} />
         <Route path="/signup" element={<SignUpPage />} />
 
-        {/* <Route path="/demo" element={<StudentHome />}>
+        <Route path="/demo" element={<StudentHome />}>
             <Route index element={<StudentDashboard />} />
             <Route path="assignments" element={<Assingments />} />
             <Route path="exams" element={<ComingSoon />} />
@@ -75,7 +75,7 @@ function App() {
             <Route path="resume-builder" element={<ComingSoon />} />
             <Route path="certificates" element={<ComingSoon />} />
             <Route path="settings" element={<ComingSoon />} />
-          </Route> */}
+          </Route>
         
 
         {/* Student Routes */}
