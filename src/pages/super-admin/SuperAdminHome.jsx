@@ -1,26 +1,52 @@
-import React from 'react'
-import SuperAdminSidebar from './SuperAdminSidebar'
-import Navbar from '../../components/common-components/Navbar'
-import { Outlet } from 'react-router-dom'
+import React, { useState } from "react";
+import SuperAdminSidebar from "./SuperAdminSidebar";
+import Navbar from "../../components/common-components/Navbar";
+import { Outlet } from "react-router-dom";
 
 function SuperAdminHome() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   return (
-    <div>
-      <div className="flex h-screen">
-        <div className="w-1/6 h-screen fixed hidden md:block">
-            <SuperAdminSidebar />
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <div>
+        {/* Mobile/Tablet Sidebar (Slide-in) */}
+        <div
+          className={`fixed top-0 left-0 z-20 h-full w-1/2 sm:w-1/3 bg-white shadow-lg transform transition-transform duration-300 lg:hidden ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <SuperAdminSidebar />
         </div>
-        <div className="ml-0 md:ml-[16.666667%] w-full md:w-5/6 flex flex-col h-screen">
-          <div className="fixed top-0 left-0 md:left-[16.666667%] w-full md:w-5/6 z-10">
-            <Navbar />
-          </div>
-          <div className="mt-[64px] overflow-y-auto h-full pb-4">
-            <Outlet />
-          </div>
+
+        {/* Desktop Sidebar (Static only on lg and above) */}
+        <div className="w-1/6 h-screen fixed hidden lg:block">
+          <SuperAdminSidebar />
+        </div>
+
+        {/* Overlay (Click outside to close) */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-40 z-10 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          ></div>
+        )}
+      </div>
+
+      {/* Main Content */}
+      <div className="ml-0 lg:ml-[16.666667%] w-full lg:w-5/6 flex flex-col h-screen overflow-y-auto">
+        <div className="fixed top-0 left-0 lg:left-[16.666667%] w-full lg:w-5/6 z-10">
+          <Navbar toggleSidebar={toggleSidebar} />
+        </div>
+        <div className="mt-[64px] w-full h-full pb-4 2xl:max-w-7xl mx-auto">
+          <Outlet />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default SuperAdminHome
+export default SuperAdminHome;

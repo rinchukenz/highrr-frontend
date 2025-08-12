@@ -30,7 +30,7 @@ import CourseModules from "./components/orgadmin-components/CourseModules";
 // import CourseSyllabus from "./components/CourseSyllabus";
 // import StudentLogin from "./components/StudentLogin";
 import SuperAdminCourses from "./pages/super-admin/SuperAdminCourses";
-import VideoLibrary from "./components/student-components/VideoLibrary";
+import VideoLibrary from "./components/orgadmin-components/VideoLibrary";
 import StudentData from "./components/student-components/StudentData";
 import AddContent from "./components/orgadmin-components/AddContent";
 import AddCourse from "./components/orgadmin-components/AddCourse";

@@ -64,35 +64,47 @@ export const AuthProvider = ({ children }) => {
     //navigate("/");
   };
 
-  const scheduleLogout = (exp) => {
+  const scheduleLogout = (exp, isStudent = false) => {
     if (logoutTimeoutRef.current) clearTimeout(logoutTimeoutRef.current);
 
-    const remainingTime = exp * 1000 - Date.now();
-    if (remainingTime > 0) {
+    const now = Date.now();
+    const expiryTime = exp * 1000;
+    let timeoutDuration;
+
+    if (isStudent) {
+      // Refresh 1 minute before expiry
+      timeoutDuration = expiryTime - now - 60 * 1000;
+      if (timeoutDuration < 0) timeoutDuration = 0; // refresh immediately if already close
+      logoutTimeoutRef.current = setTimeout(() => {
+        refreshStudentToken();
+      }, timeoutDuration);
+    } else {
+      // Admin or other role → logout at expiry
+      timeoutDuration = expiryTime - now;
+      if (timeoutDuration < 0) timeoutDuration = 0;
       logoutTimeoutRef.current = setTimeout(() => {
         logout();
-      }, remainingTime);
-    } else {
-      logout(); // Expired immediately
+      }, timeoutDuration);
     }
   };
 
   const refreshStudentToken = async () => {
+    console.log("Refreshing student token...");
     const email = localStorage.getItem("email");
-    const oldRefreshToken = localStorage.getItem("refreshToken");
+    const refreshToken = localStorage.getItem("refreshToken");
 
-    if (!email || !oldRefreshToken) {
+    if (!email || !refreshToken) {
       logout();
       return;
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/users/refresh-token",
-        { email, refreshToken: oldRefreshToken }
-      );
-
-      const { token, refreshToken: newRefreshToken, name } = response.data;
+      const token = (
+        await axios.post("http://localhost:8080/api/users/refresh-token", {
+          email,
+          refreshToken,
+        })
+      ).data; // backend returns only the token string
 
       if (!token || typeof token !== "string") {
         console.error("Invalid token received");
@@ -101,20 +113,18 @@ export const AuthProvider = ({ children }) => {
       }
 
       const decoded = jwtDecode(token);
+      console.log("Decoded new token:", decoded);
 
       localStorage.setItem("token", token);
-      localStorage.setItem("refreshToken", newRefreshToken);
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
 
       setStudentAuth({
         token,
         email,
-        name,
-        refreshToken: newRefreshToken,
+        name: localStorage.getItem("name") || null,
+        refreshToken, // keep old refresh token
       });
 
-      scheduleLogout(decoded.exp);
+      scheduleLogout(decoded.exp, true); // refresh before expiry
     } catch (err) {
       console.error("Failed to refresh token:", err);
       logout();
@@ -147,6 +157,7 @@ export const AuthProvider = ({ children }) => {
               name: localStorage.getItem("name") || null,
               refreshToken: localStorage.getItem("refreshToken") || null,
             });
+            scheduleLogout(exp, true); // student → refresh before expiry
           } else {
             setAuth({
               isLoggedIn: true,
@@ -158,13 +169,12 @@ export const AuthProvider = ({ children }) => {
               organizationId,
               organizationName,
             });
+            scheduleLogout(exp, false); // admin → logout at expiry
           }
-
-          scheduleLogout(exp);
         } else if (role === "USER") {
-          refreshStudentToken();
+          refreshStudentToken(); // student token expired → try refresh
         } else {
-          logout();
+          logout(); // admin token expired → logout
         }
       } catch (err) {
         console.error("Invalid token:", err);

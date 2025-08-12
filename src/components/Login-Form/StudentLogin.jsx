@@ -46,7 +46,7 @@ function StudentLogin() {
         refreshToken,
       });
 
-      console.log(role);
+      //console.log(role);
 
       if (role === "USER") {
         navigate("/student");

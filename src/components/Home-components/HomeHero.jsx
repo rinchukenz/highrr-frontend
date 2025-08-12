@@ -95,7 +95,7 @@ function HomeHero() {
       </div>
 
       {/* Text Content */}
-      <div className="w-full lg:w-[60%] px-2 py-15 md:px-8">
+      <div className="w-full lg:w-[60%] px-2 py-15 lg:py-4 md:px-8">
         <h1 className="text-3xl md:text-4xl font-ibm font-bold">
           Empowering Organizations and Students to Learn, Grow, and Lead
         </h1>

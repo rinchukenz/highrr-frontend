@@ -145,7 +145,7 @@ function SuperAdminDashboard() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 space-y-12 bg-white min-h-screen">
+    <div className="mx-auto w-full px-8 py-12 space-y-12 bg-white min-h-screen">
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* {stats.map((stat, idx) => (

@@ -4,7 +4,7 @@ import axios from "axios";
 function VideoLibrary() {
   const [videos, setVideos] = useState([]);
   const [file, setFile] = useState(null);
-  const [title, setTitle] = useState("");
+  //const [title, setTitle] = useState("");
 
   const fetchVideos = async () => {
     try {
@@ -21,11 +21,11 @@ function VideoLibrary() {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    if (!file || !title) return alert("Please provide title and video file");
+    if (!file) return alert("Please provide title and video file");
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("title", title);
+    //formData.append("title", title);
 
     try {
       await axios.post("http://localhost:8080/api/videos/upload", formData, {
@@ -34,7 +34,7 @@ function VideoLibrary() {
         },
       });
       setFile(null);
-      setTitle("");
+      //setTitle("");
       fetchVideos(); // Refresh list
     } catch (err) {
       console.error("Video upload failed:", err);
@@ -50,22 +50,22 @@ function VideoLibrary() {
         onSubmit={handleUpload}
         className="flex flex-col md:flex-row gap-4 mb-6 items-start"
       >
-        <input
+        {/* <input
           type="text"
           placeholder="Video Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           className="border p-2 rounded w-full md:w-1/3"
-        />
+        /> */}
         <input
           type="file"
           accept="video/*"
           onChange={(e) => setFile(e.target.files[0])}
-          className="border p-2 rounded w-full md:w-1/3"
+          className="border cursor-pointer p-2 rounded w-full md:w-1/3"
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-[#9D5CFF] text-white px-4 py-2 rounded hover:bg-violet-600"
         >
           Upload Video
         </button>

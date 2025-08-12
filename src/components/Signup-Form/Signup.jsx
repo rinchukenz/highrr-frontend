@@ -72,7 +72,7 @@ function Signup() {
 
       console.log(info);
 
-      navigate("/login");
+      navigate("/login/student");
     } catch (err) {
       alert("Signup failed");
     }

@@ -18,7 +18,7 @@ function StudentDashboard() {
   //console.log("Decode : ",decoded);
 
   return (
-    <div className="min-h-screen  py-5 px-4 md:px-15 lg:px-4">
+    <div className="min-h-screen w-full py-5 px-4 md:px-15 lg:px-4">
       {/* Welcome Message */}
       <div
         className="w-full flex font-inter justify-between gap-6 items-center px-6 py-6 md:py-10 md:px-15 rounded-2xl bg-[#9D5CFF]"
@@ -64,14 +64,14 @@ function StudentDashboard() {
         <PlacementOppertunities />
       </div>
 
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-7">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="lg:col-span-7">
           <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             AI Suggestions
           </h2>
           <AiSuggestions />
         </div>
-        <div className="col-span-5">
+        <div className="lg:col-span-5">
           <h2 className="font-semibold font-inter text-2xl mt-2 lg:mt-10">
             Placement Opportunities
           </h2>
