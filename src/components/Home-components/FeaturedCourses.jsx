@@ -11,6 +11,8 @@ import cource5 from "../../assets/C Programming.png";
 const FeaturedCourses = () => {
   const scrollRef = useRef(null);
 
+  const [courses, setCourses] = useState([]);
+
   // State to keep track of selected category
   const [selectedCategory, setSelectedCategory] = useState(
     "Software Development"
